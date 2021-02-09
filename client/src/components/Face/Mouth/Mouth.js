@@ -1,8 +1,10 @@
 import React from 'react';
 import {StyleSheet, View, TouchableOpacity} from 'react-native';
+import { connect } from 'react-redux';
+import * as actions from '../../../store/actions';
 
-const Mouth = () => {
-  return <TouchableOpacity style={styles.Mouth}>
+const Mouth = (props) => {
+  return <TouchableOpacity onPress={props.onTouchedMouth} style={styles.Mouth}>
       <View style={styles.Tongue}></View>
       <View style={styles.Teeth}></View>
   </TouchableOpacity>;
@@ -45,4 +47,10 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Mouth;
+const mapDispatchToProps = (dispatch) => {
+  return{
+  onTouchedMouth: () => dispatch(actions.tocuhedMouth())
+  }
+};
+
+export default connect(null, mapDispatchToProps)(Mouth);

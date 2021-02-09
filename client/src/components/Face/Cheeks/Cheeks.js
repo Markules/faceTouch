@@ -1,11 +1,13 @@
 import React from 'react';
 import {StyleSheet, TouchableOpacity, View} from 'react-native';
+import { connect } from 'react-redux';
+import * as actions from '../../../store/actions';
 
-const Cheeks = () => {
+const Cheeks = (props) => {
   return (
       <>
-    <TouchableOpacity style={[styles.Cheeks, styles.LeftCheek]}></TouchableOpacity>
-    <TouchableOpacity style={[styles.Cheeks, styles.RightCheek]}></TouchableOpacity>
+    <TouchableOpacity onPress={() => props.onTouchedCheeks()} style={[styles.Cheeks, styles.LeftCheek]}></TouchableOpacity>
+    <TouchableOpacity onPress={() => props.onTouchedCheeks()} style={[styles.Cheeks, styles.RightCheek]}></TouchableOpacity>
     </>
     );
 };
@@ -31,4 +33,10 @@ RightCheek: {
 }
 });
 
-export default Cheeks;
+const mapDispatchToProps = (dispatch) => {
+    return{
+    onTouchedCheeks: () => dispatch(actions.tocuhedCheeks())
+    }
+};
+
+export default connect(null, mapDispatchToProps)(Cheeks);

@@ -1,9 +1,11 @@
 import React from 'react';
 import {StyleSheet, TouchableOpacity, View} from 'react-native';
+import { connect } from 'react-redux';
+import * as actions from '../../../store/actions';
 
-const Nose = () => {
+const Nose = (props) => {
   return (
-    <TouchableOpacity style={styles.Nose}>
+    <TouchableOpacity onPress={() => props.onTouchedNose()} style={styles.Nose}>
       <View style={styles.LeftNostril}></View>
       <View style={styles.RightNostril}></View>
     </TouchableOpacity>
@@ -26,26 +28,13 @@ const styles = StyleSheet.create({
     top: '22%',
     left: '38%',
   },
-  LeftNostril: {
-    // backgroundColor: 'black',
-    // width: 8,
-    // height: 8,
-    // borderRadius: 50,
-    // position: 'relative',
-    // left: 8,
-    // top: '65%'
 
-  },
-  RightNostril: {
-    // backgroundColor: 'black',
-    // width: 8,
-    // height: 8,
-    // borderRadius: 50,
-    // position: 'relative',
-    // left: 60,
-    // top: '53%'
-
-  },
 });
 
-export default Nose;
+const mapDispatchToProps = (dispatch) => {
+  return{
+  onTouchedNose: () => dispatch(actions.tocuhedNose())
+  }
+};
+
+export default connect(null, mapDispatchToProps)(Nose);

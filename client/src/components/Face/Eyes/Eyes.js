@@ -1,23 +1,25 @@
 import React from 'react';
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import { connect } from 'react-redux';
+import * as actions from '../../../store/actions';
 
-const Eyes = () => {
+const Eyes = (props) => {
 
   return (
     <>
-      <TouchableOpacity style={styles.LeftEye}>
-          <TouchableOpacity style={styles.OutterPupil}>
-        <TouchableOpacity style={[styles.LeftPupil, styles.Pupil]}>
-        <TouchableOpacity style={styles.InnerPupil}></TouchableOpacity>
+      <TouchableOpacity onPress={() => props.onTouchedEyes()} style={styles.LeftEye}>
+          <TouchableOpacity onPress={() => props.onTouchedEyes()} style={styles.OutterPupil}>
+        <TouchableOpacity onPress={() => props.onTouchedEyes()} style={[styles.LeftPupil, styles.Pupil]}>
+        <TouchableOpacity onPress={() => props.onTouchedEyes()} style={styles.InnerPupil}></TouchableOpacity>
 
         </TouchableOpacity>
         </TouchableOpacity>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.RightEye}>
-          <TouchableOpacity style={styles.OutterPupil}>
-        <TouchableOpacity style={[styles.RightPupil, styles.Pupil]}>
-            <TouchableOpacity style={styles.InnerPupil}></TouchableOpacity>
+      <TouchableOpacity onPress={() => props.onTouchedEyes()} style={styles.RightEye}>
+          <TouchableOpacity onPress={() => props.onTouchedEyes()} style={styles.OutterPupil}>
+        <TouchableOpacity onPress={() => props.onTouchedEyes()} style={[styles.RightPupil, styles.Pupil]}>
+            <TouchableOpacity onPress={() => props.onTouchedEyes()} style={styles.InnerPupil}></TouchableOpacity>
         </TouchableOpacity>
         </TouchableOpacity>
       </TouchableOpacity>
@@ -73,4 +75,10 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Eyes;
+const mapDispatchToProps = (dispatch) => {
+  return{
+  onTouchedEyes: () => dispatch(actions.tocuhedEyes())
+  }
+};
+
+export default connect(null, mapDispatchToProps)(Eyes);

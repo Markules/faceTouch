@@ -1,9 +1,16 @@
-import React from 'react'
+import React from 'react';
+import { connect } from 'react-redux';
 import { StyleSheet, TouchableOpacity, View } from 'react-native'
 
-const Hair = () => {
+import * as actions from '../../../store/actions';
+const Hair = (props) => {
+
+    const touch = () => {
+        console.log('touched')
+    }
+
     return (
-        <TouchableOpacity style={styles.Hair}>
+        <TouchableOpacity onPress={() => props.onTouchedHair()} style={styles.Hair}>
             
         </TouchableOpacity>
     )
@@ -16,7 +23,7 @@ const styles = StyleSheet.create({
       left: 60,
       height: 80,
       width: '50%',
-      backgroundColor: 'yellow' ,
+      backgroundColor: 'yellow',
       margin: 'auto',
       borderTopLeftRadius: 150,
       borderBottomLeftRadius: 80,
@@ -27,5 +34,10 @@ const styles = StyleSheet.create({
     }
 })
 
+const mapDispatchToProps = (dispatch) => {
+    return{
+    onTouchedHair: () => dispatch(actions.tocuhedHair())
+    }
+};
 
-export default Hair;
+export default connect(null, mapDispatchToProps)(Hair);
