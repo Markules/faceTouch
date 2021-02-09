@@ -19,16 +19,19 @@ const Hair = (props) => {
 const styles = StyleSheet.create({
     Hair: {
       position: 'absolute',
-      top: -20,
-      left: 60,
-      height: 80,
-      width: '50%',
-      backgroundColor: 'yellow',
-      margin: 'auto',
-      borderTopLeftRadius: 150,
-      borderBottomLeftRadius: 80,
-      borderBottomRightRadius: 100,
-      borderTopRightRadius: 50
+      top: -10,
+      left: 120,
+      height: '27%',
+      width: '22%',
+      backgroundColor: 'transparent',
+      borderLeftColor: 'yellow',
+      borderBottomColor: 'yellow',
+      borderRadius: 500,
+      borderLeftWidth: 10,
+      borderBottomWidth: 25
+
+
+     
 
 
     }

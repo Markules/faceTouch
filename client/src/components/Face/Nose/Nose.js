@@ -20,13 +20,13 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderLeftWidth: 1,
     borderRightWidth: 1,
-    width: 80,
-    height: 50,
+    width: 70,
+    height: 20,
     borderBottomLeftRadius: 40,
     borderBottomRightRadius: 40,
     position: 'relative',
-    top: '22%',
-    left: '38%',
+    bottom: '12%',
+    left: '40%',
   },
 
 });

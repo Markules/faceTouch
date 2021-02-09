@@ -15,20 +15,20 @@ const Cheeks = (props) => {
 const styles = StyleSheet.create({
   Cheeks: {
     position: 'relative',
-    borderRadius: 20,
+    borderRadius: 30,
     borderStyle: 'solid',
-    height: 65,
-    width: 65,
+    height: 62,
+    width: 62,
     margin: 0,
     backgroundColor: '#FFB395'
 },
 LeftCheek: {
-    top: '53%',
-    left: '5%'
+    top: '20%',
+    left: '7%'
 },
 
 RightCheek: {
-    top: '38%',
+    top: '0%',
     left:'75%'
 }
 });

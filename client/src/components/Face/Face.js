@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Image, StyleSheet, Text} from "react-native";
 import Cheeks from './Cheeks/Cheeks';
+import Ears from './Ears/Ears';
 import Eyes from './Eyes/Eyes';
 import Hair from './Hair/Hair';
 import Mouth from './Mouth/Mouth';
@@ -12,6 +13,7 @@ const Face = (props) => {
         <View {...props} style={styles.Face}>
             <Hair />
             <Eyes />
+            <Ears />
             <Cheeks />
             <Nose />
             <Mouth />
@@ -27,7 +29,7 @@ Face:{
     borderWidth: 1,
     borderRadius: 150,
     width: 340,
-    height: 420,
+    height: 300,
     position: 'absolute',
     marginLeft: 30,
     marginTop: 100,

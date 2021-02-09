@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   Pupil: {
     backgroundColor: '#000',
     width: '65%',
-    height: '70%',
+    height: '65%',
     position: 'relative',
     top: '15%',
     left: '20%',
@@ -39,40 +39,38 @@ const styles = StyleSheet.create({
   },
   InnerPupil: {
     backgroundColor: 'white',
-    width: '50%',
+    width: '35%',
     height: '35%',
     borderRadius: 50
   },
   LeftEye: {
-    width: '25%',
-    height: '25%',
+    width: '20%',
+    height: '20%',
     backgroundColor: '#fff',
     position: 'absolute',
-    top: '25%',
+    top: '30%',
     left: '20%',
     borderRadius: 50,
   },
   OutterPupil: {
-    height: '60%',
+    height: '80%',
     backgroundColor: '#3abeff',
-    width: '75%',
+    width: '80%',
     borderRadius: 50,
     position: 'relative',
     top: '15%',
     left: '15%'
   },
   RightEye: {
-    width: '25%',
-    height: '25%',
+    width: '20%',
+    height: '20%',
     backgroundColor: '#fff',
     position: 'absolute',
-    top: '25%',
+    top: '30%',
     right: '20%',
     borderRadius: 50,
   },
-  RightPupil: {
- 
-  },
+
 });
 
 const mapDispatchToProps = (dispatch) => {

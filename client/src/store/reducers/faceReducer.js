@@ -41,6 +41,13 @@ const mouthTouch = (state, action) => {
   });
 };
 
+// Set name to ears
+const earsTouch = (state, action) => {
+    return updateObject(state, {
+      name: action.name,
+    });
+  };
+
 // reset name to null
 const resetName = (state, action) => {
   return updateObject(state, {
@@ -60,6 +67,8 @@ const reducer = (state = initalState, action) => {
       return cheeksTouch(state, action);
     case actionTypes.MOUTH_TOUCH:
       return mouthTouch(state, action);
+      case actionTypes.EARS_TOUCH:
+      return earsTouch(state, action);
 
     case actionTypes.RESET_NAME:
       return resetName(state, action);

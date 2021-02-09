@@ -40,6 +40,14 @@ export const mouthTouch = () => {
     };
   };
 
+  // Dispatch action type and name to ears
+export const earsTouch = () => {
+    return {
+      type: actionTypes.EARS_TOUCH,
+      name: 'Ears',
+    };
+  };
+
 
 // Reset name 
 export const resetName = () => {
@@ -97,3 +105,13 @@ export const tocuhedNose = () => {
       }, 5000);
     };
   };
+
+    // Set ears action
+    export const tocuhedEars = () => {
+        return (dispatch) => {
+          dispatch(earsTouch());
+          setTimeout(() => {
+            dispatch(resetName());
+          }, 5000);
+        };
+      };
