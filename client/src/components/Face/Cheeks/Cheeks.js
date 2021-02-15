@@ -23,12 +23,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFB395'
 },
 LeftCheek: {
-    top: '20%',
+    top: '3%',
     left: '7%'
 },
 
 RightCheek: {
-    top: '0%',
+    bottom: '17%',
     left:'75%'
 }
 });

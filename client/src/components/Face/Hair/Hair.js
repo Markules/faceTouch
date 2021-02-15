@@ -19,7 +19,7 @@ const Hair = (props) => {
 const styles = StyleSheet.create({
     Hair: {
       position: 'absolute',
-      top: -10,
+      top: -1,
       left: 120,
       height: '27%',
       width: '22%',

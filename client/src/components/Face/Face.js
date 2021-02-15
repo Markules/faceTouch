@@ -28,11 +28,11 @@ Face:{
     borderColor: "gray",
     borderWidth: 1,
     borderRadius: 150,
-    width: 340,
-    height: 300,
+    width: '85%',
+    height: '50%',
     position: 'absolute',
     marginLeft: 30,
-    marginTop: 100,
+    marginTop: 140,
     backgroundColor: "#ffdbac",
     
 }

@@ -16,19 +16,19 @@ const Eyes = (props) => {
 const styles = StyleSheet.create({
  Ears: {
     backgroundColor: '#ffdbac',
-    height: 45,
+    height: 75,
     width: 30,
     borderRadius: 50,
     position: 'relative',
  },
 LeftEar: {
-    left: -20,
+    left: -15,
     top: '35%'
 }, 
 
 RightEar: {
-    left: 325,
-    top: '22%'
+    left: 290,
+    top: '13%'
     
 }
 

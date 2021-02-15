@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 40,
     borderBottomRightRadius: 40,
     position: 'relative',
-    bottom: '12%',
+    bottom: '30%',
     left: '40%',
   },
 

@@ -5,6 +5,7 @@ export const hairTouch = () => {
   return {
     type: actionTypes.HAIR_TOUCH,
     name: 'Hair',
+    
   };
 };
 
@@ -62,7 +63,7 @@ export const tocuhedHair = () => {
     dispatch(hairTouch());
     setTimeout(() => {
       dispatch(resetName());
-    }, 5000);
+    }, 1000);
   };
 };
 
@@ -72,7 +73,7 @@ export const tocuhedEyes = () => {
     dispatch(eyesTouch());
     setTimeout(() => {
       dispatch(resetName());
-    }, 5000);
+    }, 1000);
   };
 };
 
@@ -82,7 +83,7 @@ export const tocuhedNose = () => {
       dispatch(noseTouch());
       setTimeout(() => {
         dispatch(resetName());
-      }, 5000);
+      }, 1000);
     };
   };
 
@@ -92,7 +93,7 @@ export const tocuhedNose = () => {
       dispatch(cheeksTouch());
       setTimeout(() => {
         dispatch(resetName());
-      }, 5000);
+      }, 1000);
     };
   };
 
@@ -102,7 +103,7 @@ export const tocuhedNose = () => {
       dispatch(mouthTouch());
       setTimeout(() => {
         dispatch(resetName());
-      }, 5000);
+      }, 1000);
     };
   };
 
@@ -112,6 +113,6 @@ export const tocuhedNose = () => {
           dispatch(earsTouch());
           setTimeout(() => {
             dispatch(resetName());
-          }, 5000);
+          }, 1000);
         };
       };

@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import {StyleSheet, Text, View} from 'react-native';
 
-const Cheeks = (props) => {
+const FacePartsNames = (props) => {
   let facePartName = props.touched !== null ? props.touched : null;
 
   return (
@@ -18,14 +18,16 @@ const styles = StyleSheet.create({
     position: 'relative',
     width: '85%',
     height: 100,
-    top: '75%',
+    bottom: '20%',
     left: '7%',
+    borderWidth: 1,
+    borderColor: 'gray'
   },
   FacePartName: {
     fontSize: 32,
     marginLeft: '37%',
     marginTop: '5%',
-    color: 'gray',
+    color: 'white',
   },
 });
 
@@ -35,4 +37,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Cheeks);
+export default connect(mapStateToProps)(FacePartsNames);
