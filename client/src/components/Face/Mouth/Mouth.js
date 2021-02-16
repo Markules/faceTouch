@@ -1,13 +1,35 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {StyleSheet, View, TouchableOpacity} from 'react-native';
 import {connect} from 'react-redux';
 import * as actions from '../../../store/actions';
 
+import Sound from 'react-native-sound';
 // Mouth component
 const Mouth = (props) => {
+
+  let voice = null;
+
+  useEffect(() => {
+    voice = new Sound('mouth.mp3', Sound.MAIN_BUNDLE, (error) => {
+      if (error)
+      console.log('Error when init SoundPlayer');
+    });
+  }, []);
+
+  const onPressMouth = () => {
+    if (voice !== null) {
+      voice.play((success) => {
+        if (!success) {
+          console.log('Error when play SoundPlayer');
+        }
+      });
+    }
+    props.onTouchedMouth();
+  };
+
   return (
     //If Mouth pressed, set the name as "Mouth"
-    <TouchableOpacity onPress={props.onTouchedMouth} style={styles.Mouth}>
+    <TouchableOpacity onPress={() => onPressMouth()} style={styles.Mouth}>
       <View style={styles.Tongue}></View>
       <View style={[styles.Teeth, styles.LeftTeeth]}></View>
       <View style={[styles.Teeth, styles.RightTeeth]}></View>

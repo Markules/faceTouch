@@ -1,16 +1,37 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import { connect } from 'react-redux';
 import * as actions from '../../../store/actions';
 
+import Sound from 'react-native-sound';
 // Ears component
 const Ears = (props) => {
+
+  let voice = null;
+
+  useEffect(() => {
+    voice = new Sound('ears.mp3', Sound.MAIN_BUNDLE, (error) => {
+      if (error)
+        ToastAndroid.show('Error when init SoundPlayer', ToastAndroid.SHORT);
+    });
+  }, []);
+
+  const onPressEars = () => {
+    if (voice !== null) {
+      voice.play((success) => {
+        if (!success) {
+          ToastAndroid.show('Error when play SoundPlayer', ToastAndroid.SHORT);
+        }
+      });
+    }
+    props.onTouchedEars();
+  };
 
   return (
     // If one of the ears is pressed, set the name to "Ears"
     <>
-      <TouchableOpacity onPress={() => props.onTouchedEars()} style={[styles.LeftEar, styles.Ears]}></TouchableOpacity>
-      <TouchableOpacity onPress={() => props.onTouchedEars()} style={[styles.RightEar, styles.Ears]}></TouchableOpacity>
+      <TouchableOpacity onPress={() => onPressEars()} style={[styles.LeftEar, styles.Ears]}></TouchableOpacity>
+      <TouchableOpacity onPress={() => onPressEars()} style={[styles.RightEar, styles.Ears]}></TouchableOpacity>
     </>
   );
 };

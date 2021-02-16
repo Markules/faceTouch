@@ -1,27 +1,48 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import { connect } from 'react-redux';
 import * as actions from '../../../store/actions';
 
+import Sound from 'react-native-sound';
 // Eyes Component
 const Eyes = (props) => {
+
+  let voice = null;
+
+  useEffect(() => {
+    voice = new Sound('eyes.mp3', Sound.MAIN_BUNDLE, (error) => {
+      if (error)
+      console.log('Error when init SoundPlayer');
+    });
+  }, []);
+
+  const onPressEyes = () => {
+    if (voice !== null) {
+      voice.play((success) => {
+        if (!success) {
+          console.log('Error when play SoundPlayer');
+        }
+      });
+    }
+    props.onTouchedEyes();
+  };
 
   return (
     // If one of the eyes touched, set name as "Eyes"
     <>
-      <TouchableOpacity onPress={() => props.onTouchedEyes()} style={styles.LeftEye}>
-          <TouchableOpacity onPress={() => props.onTouchedEyes()} style={styles.OutterPupil}>
-        <TouchableOpacity onPress={() => props.onTouchedEyes()} style={[styles.LeftPupil, styles.Pupil]}>
-        <TouchableOpacity onPress={() => props.onTouchedEyes()} style={styles.InnerPupil}></TouchableOpacity>
+      <TouchableOpacity onPress={() => onPressEyes()} style={styles.LeftEye}>
+          <TouchableOpacity onPress={() => onPressEyes()} style={styles.OutterPupil}>
+        <TouchableOpacity onPress={() => onPressEyes()} style={[styles.LeftPupil, styles.Pupil]}>
+        <TouchableOpacity onPress={() => onPressEyes()} style={styles.InnerPupil}></TouchableOpacity>
 
         </TouchableOpacity>
         </TouchableOpacity>
       </TouchableOpacity>
 
-      <TouchableOpacity onPress={() => props.onTouchedEyes()} style={styles.RightEye}>
-          <TouchableOpacity onPress={() => props.onTouchedEyes()} style={styles.OutterPupil}>
-        <TouchableOpacity onPress={() => props.onTouchedEyes()} style={[styles.RightPupil, styles.Pupil]}>
-            <TouchableOpacity onPress={() => props.onTouchedEyes()} style={styles.InnerPupil}></TouchableOpacity>
+      <TouchableOpacity onPress={() => onPressEyes()} style={styles.RightEye}>
+          <TouchableOpacity onPress={() => onPressEyes()} style={styles.OutterPupil}>
+        <TouchableOpacity onPress={() => onPressEyes()} style={[styles.RightPupil, styles.Pupil]}>
+            <TouchableOpacity onPress={() => onPressEyes()} style={styles.InnerPupil}></TouchableOpacity>
         </TouchableOpacity>
         </TouchableOpacity>
       </TouchableOpacity>
