@@ -1,38 +1,42 @@
 import React, {useState, useEffect} from 'react';
 import {connect} from 'react-redux';
 
-import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 
 const AskFacePartsName = (props) => {
+  // Name of face part state, defualt null
   const [partName, updatePartName] = useState(null);
-  const [triggeredFunction, updateFunction] = useState(props.touched === partName);
-  const [initalState, activateFacePart] = useState(partName);
+  // Should fuction needs to be triggered again state 
+  const [triggeredFunction, updateFunction] = useState(
+    props.touched === partName,
+  );
 
+  // Mount component when part name is the same as props touched
   useEffect(() => {
-    pickAFacePart();
+    if (props.touched === partName) {
+      updatePartName(null);
+      pickAFacePart();
+    } else pickAFacePart();
   }, [props.touched === partName]);
 
-  const pickAFacePart = () => {
-    if(!triggeredFunction){
-    const facePartName = ['Hair', 'Nose', 'Eyes', 'Cheeks', 'Ears', 'Mouth'];
-    const randomPart =
-      facePartName[Math.floor(Math.random() * facePartName.length)];
+  // Picks a random face part function
+  const pickAFacePart = async () => {
+    if (!triggeredFunction) {
+      const facePartName = await ['Hair', 'Nose', 'Eyes', 'Cheeks', 'Ears', 'Mouth'];
+      const randomPart = await facePartName[
+        Math.floor(Math.random() * facePartName.length)
+      ];
 
       updateFunction(true);
 
-    return setTimeout(() => {
-      updatePartName(randomPart);
-    }, 500);
-  }
-  return updateFunction(false);
-
+      return updatePartName(randomPart);
+    }
+    return updateFunction(false);
   };
 
-const correctAnswer = (
-  <Text style={styles.Correct}>Correct!</Text>
-)
-  
-console.log(triggeredFunction);
+  // If part name is the same as props touched "CORRECT" text will appear
+  const correctAnswer = <Text style={styles.Correct}>CORRECT!</Text>;
+
   return (
     <View style={styles.Container}>
       {props.touched === partName ? correctAnswer : null}

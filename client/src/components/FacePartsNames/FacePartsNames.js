@@ -4,6 +4,8 @@ import {connect} from 'react-redux';
 import {StyleSheet, Text, View} from 'react-native';
 
 const FacePartsNames = (props) => {
+
+  // Set the name of the face part which was touched
   let facePartName = props.touched !== null ? props.touched : null;
 
   return (

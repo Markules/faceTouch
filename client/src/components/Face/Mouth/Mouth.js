@@ -3,8 +3,10 @@ import {StyleSheet, View, TouchableOpacity} from 'react-native';
 import {connect} from 'react-redux';
 import * as actions from '../../../store/actions';
 
+// Mouth component
 const Mouth = (props) => {
   return (
+    //If Mouth pressed, set the name as "Mouth"
     <TouchableOpacity onPress={props.onTouchedMouth} style={styles.Mouth}>
       <View style={styles.Tongue}></View>
       <View style={[styles.Teeth, styles.LeftTeeth]}></View>
@@ -58,6 +60,7 @@ const styles = StyleSheet.create({
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    // Send an action to set name as "Mouth"
     onTouchedMouth: () => dispatch(actions.tocuhedMouth()),
   };
 };

@@ -49,8 +49,8 @@ const earsTouch = (state, action) => {
   };
 
 // reset name to null
-const resetName = (state, action) => {
-  return updateObject(state, {
+const resetName = async (state, action) => {
+  return await updateObject(state, {
     name: '',
   });
 };

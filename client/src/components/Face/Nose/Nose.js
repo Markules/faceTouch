@@ -3,8 +3,10 @@ import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import { connect } from 'react-redux';
 import * as actions from '../../../store/actions';
 
+// Nose component 
 const Nose = (props) => {
   return (
+    // If pressed on nose, set name as "Nose"
     <TouchableOpacity onPress={() => props.onTouchedNose()} style={styles.Nose}>
       <View style={styles.LeftNostril}></View>
       <View style={styles.RightNostril}></View>
@@ -33,6 +35,7 @@ const styles = StyleSheet.create({
 
 const mapDispatchToProps = (dispatch) => {
   return{
+    // Send action to set name as "Nose"
   onTouchedNose: () => dispatch(actions.tocuhedNose())
   }
 };

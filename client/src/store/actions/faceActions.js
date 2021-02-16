@@ -52,8 +52,8 @@ export const earsTouch = () => {
 
 // Reset name 
 export const resetName = () => {
-  return {
-    type: actionTypes.RESET_NAME,
+   return {
+   type:  actionTypes.RESET_NAME,
   };
 };
 
@@ -63,7 +63,7 @@ export const tocuhedHair = () => {
     dispatch(hairTouch());
     setTimeout(() => {
       dispatch(resetName());
-    }, 1000);
+    }, 1500);
   };
 };
 
@@ -71,8 +71,8 @@ export const tocuhedHair = () => {
 export const tocuhedEyes = () => {
   return (dispatch) => {
     dispatch(eyesTouch());
-    setTimeout(() => {
-      dispatch(resetName());
+     setTimeout(() => {
+    dispatch(resetName());
     }, 1000);
   };
 };

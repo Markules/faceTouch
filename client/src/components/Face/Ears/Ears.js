@@ -3,9 +3,11 @@ import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import { connect } from 'react-redux';
 import * as actions from '../../../store/actions';
 
-const Eyes = (props) => {
+// Ears component
+const Ears = (props) => {
 
   return (
+    // If one of the ears is pressed, set the name to "Ears"
     <>
       <TouchableOpacity onPress={() => props.onTouchedEars()} style={[styles.LeftEar, styles.Ears]}></TouchableOpacity>
       <TouchableOpacity onPress={() => props.onTouchedEars()} style={[styles.RightEar, styles.Ears]}></TouchableOpacity>
@@ -37,8 +39,9 @@ RightEar: {
 
 const mapDispatchToProps = (dispatch) => {
   return{
+    // Send an action to set name as "Ears"
   onTouchedEars: () => dispatch(actions.tocuhedEars())
   }
 };
 
-export default connect(null, mapDispatchToProps)(Eyes);
+export default connect(null, mapDispatchToProps)(Ears);

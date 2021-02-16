@@ -7,6 +7,7 @@ import Hair from './Hair/Hair';
 import Mouth from './Mouth/Mouth';
 import Nose from './Nose/Nose';
 
+// Face component
 const Face = (props) => {
 
     return(

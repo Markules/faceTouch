@@ -3,9 +3,11 @@ import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import { connect } from 'react-redux';
 import * as actions from '../../../store/actions';
 
+// Eyes Component
 const Eyes = (props) => {
 
   return (
+    // If one of the eyes touched, set name as "Eyes"
     <>
       <TouchableOpacity onPress={() => props.onTouchedEyes()} style={styles.LeftEye}>
           <TouchableOpacity onPress={() => props.onTouchedEyes()} style={styles.OutterPupil}>
@@ -75,6 +77,7 @@ const styles = StyleSheet.create({
 
 const mapDispatchToProps = (dispatch) => {
   return{
+    // Send an action to set name as "Eyes"
   onTouchedEyes: () => dispatch(actions.tocuhedEyes())
   }
 };
