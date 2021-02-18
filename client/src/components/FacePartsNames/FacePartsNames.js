@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     position: 'relative',
     width: '85%',
     height: 100,
-    bottom: '20%',
+    top: '60%',
     left: '7%',
     borderWidth: 1,
     borderColor: 'gray'

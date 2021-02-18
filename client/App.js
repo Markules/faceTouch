@@ -1,31 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
 import reducers from './src/store/reducers';
 import ReduxThunk from 'redux-thunk';
 
-import Face from './src/components/Face/Face';
-import FacePartsName from './src/components/FacePartsNames/FacePartsNames';
-import AskFacePart from './src/components/AskFacePart/AskFacePart';
+import FaceGame from './src/containers/FaceGame/FaceGame';
+import Welcome from './src/components/Welcome/Welcome';
+import { Route, NativeRouter, Switch } from 'react-router-native';
+
 
 const App = (props) => {
   const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
 
   return (
     <Provider store={store}>
+      <NativeRouter>
       <View style={styles.body}>
-        <AskFacePart />
-        <Face />
+        <Switch>
+        <Route exact path="/" component={Welcome} />
+        <Route exact path="/game" component={FaceGame} />
+        </Switch>
       </View>
-      <FacePartsName />
+      </NativeRouter>
     </Provider>
   );
 };
 
 const styles = StyleSheet.create({
   body: {
-    backgroundColor: '#eb5e0b',
+    backgroundColor: '#fa7d09',
     height: '100%',
   
 
