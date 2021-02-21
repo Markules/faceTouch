@@ -50,12 +50,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#E0AB8B',
   },
   LeftCheek: {
-    top: '3%',
+    top: '7%',
     left: '7%',
   },
 
   RightCheek: {
-    bottom: '17%',
+    bottom: '12%',
     left: '75%',
   },
 });
