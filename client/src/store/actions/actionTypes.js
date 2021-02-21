@@ -6,3 +6,4 @@ export const CHEEKS_TOUCH = "CHEEKS_TOUCH";
 export const MOUTH_TOUCH = "MOUTH_TOUCH";
 export const EARS_TOUCH = "EARS_TOUCH";
 export const RESET_NAME = "RESET_NAME";
+export const FACE_ERROR = "FACE_ERROR";

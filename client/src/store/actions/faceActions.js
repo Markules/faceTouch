@@ -1,118 +1,91 @@
 import * as actionTypes from './actionTypes';
 
-// Dispatch action type and name to hair
-export const hairTouch = () => {
-  return {
-    type: actionTypes.HAIR_TOUCH,
-    name: 'Hair',
-    
-  };
-};
-
-// Dispatch action type and name to eyes
-export const eyesTouch = () => {
-  return {
-    type: actionTypes.EYES_TOUCH,
-    name: 'Eyes',
-  };
-};
-
-// Dispatch action type and name to nose
-export const noseTouch = () => {
-    return {
-      type: actionTypes.NOSE_TOUCH,
-      name: 'Nose',
-    };
-  };
-
-  // Dispatch action type and name to cheeks
-export const cheeksTouch = () => {
-    return {
-      type: actionTypes.CHEEKS_TOUCH,
-      name: 'Cheeks',
-    };
-  };
-
-// Dispatch action type and name to mouth
-export const mouthTouch = () => {
-    return {
-      type: actionTypes.MOUTH_TOUCH,
-      name: 'Mouth',
-    };
-  };
-
-  // Dispatch action type and name to ears
-export const earsTouch = () => {
-    return {
-      type: actionTypes.EARS_TOUCH,
-      name: 'Ears',
-    };
-  };
-
-
-// Reset name 
-export const resetName = () => {
-   return {
-   type:  actionTypes.RESET_NAME,
-  };
-};
-
 // Set hair action
-export const tocuhedHair = () => {
-  return (dispatch) => {
-    dispatch(hairTouch());
+export const tocuhedHair = () => async (dispatch) => {
+  try {
+    await dispatch({type: actionTypes.HAIR_TOUCH, name: 'Hair'});
     setTimeout(() => {
-      dispatch(resetName());
+      dispatch({type: actionTypes.RESET_NAME});
     }, 1500);
-  };
+  } catch (err) {
+    dispatch({
+      type: actionTypes.FACE_ERROR,
+      payload: {err},
+    });
+  }
 };
 
 // Set eyes action
-export const tocuhedEyes = () => {
-  return (dispatch) => {
-    dispatch(eyesTouch());
-     setTimeout(() => {
-    dispatch(resetName());
-    }, 1000);
-  };
+export const tocuhedEyes = () => async (dispatch) => {
+  try {
+    dispatch({type: actionTypes.EYES_TOUCH, name: 'Eyes'});
+    setTimeout(() => {
+      dispatch({type: actionTypes.RESET_NAME});
+    }, 1500);
+  } catch (err) {
+    dispatch({
+      type: actionTypes.FACE_ERROR,
+      payload: {err},
+    });
+  }
 };
 
 // Set nose action
-export const tocuhedNose = () => {
-    return (dispatch) => {
-      dispatch(noseTouch());
-      setTimeout(() => {
-        dispatch(resetName());
-      }, 1000);
-    };
-  };
+export const tocuhedNose = () => async (dispatch) => {
+  try {
+    dispatch({type: actionTypes.NOSE_TOUCH, name: 'Nose'});
+    setTimeout(() => {
+      dispatch({type: actionTypes.RESET_NAME});
+    }, 1500);
+  } catch {
+    dispatch({
+      type: actionTypes.FACE_ERROR,
+      payload: {err},
+    });
+  }
+};
 
-  // Set cheeks action
-  export const tocuhedCheeks = () => {
-    return (dispatch) => {
-      dispatch(cheeksTouch());
-      setTimeout(() => {
-        dispatch(resetName());
-      }, 1000);
-    };
-  };
+// Set cheeks action
+export const tocuhedCheeks = () => async (dispatch) => {
+  try {
+    dispatch({type: actionTypes.CHEEKS_TOUCH, name: 'Cheeks'});
+    setTimeout(() => {
+      dispatch({type: actionTypes.RESET_NAME});
+    }, 1500);
+  } catch {
+    dispatch({
+      type: actionTypes.FACE_ERROR,
+      payload: {err},
+    });
+  }
+};
 
-  // Set mouth action
-  export const tocuhedMouth = () => {
-    return (dispatch) => {
-      dispatch(mouthTouch());
-      setTimeout(() => {
-        dispatch(resetName());
-      }, 1000);
-    };
-  };
+// Set mouth action
+export const tocuhedMouth = () => async (dispatch) => {
+  try {
+    dispatch({type: actionTypes.MOUTH_TOUCH, name: 'Mouth'});
+    setTimeout(() => {
+      dispatch({type: actionTypes.RESET_NAME});
+    }, 1500);
+  } catch {
+    dispatch({
+      type: actionTypes.FACE_ERROR,
+      payload: {err},
+    });
+  }
+};
 
-    // Set ears action
-    export const tocuhedEars = () => {
-        return (dispatch) => {
-          dispatch(earsTouch());
-          setTimeout(() => {
-            dispatch(resetName());
-          }, 1000);
-        };
-      };
+// Set ears action
+export const tocuhedEars = () => async (dispatch) => {
+  try {
+    dispatch({type: actionTypes.EARS_TOUCH, name: 'Ears'});
+    setTimeout(() => {
+      dispatch({type: actionTypes.RESET_NAME});
+    }, 1500);
+  } catch {
+    dispatch({
+      type: actionTypes.FACE_ERROR,
+      payload: {err},
+    });
+  }
+};

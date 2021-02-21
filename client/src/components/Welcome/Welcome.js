@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     marginLeft: 30,
     marginTop: 540,
-    backgroundColor: '#ffdbac',
+    backgroundColor: 'white',
     shadowColor: '#000000',
     shadowOpacity: 0.8,
     shadowRadius: 7,

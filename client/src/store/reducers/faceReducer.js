@@ -58,20 +58,20 @@ const resetName = async (state, action) => {
 const reducer = (state = initalState, action) => {
   switch (action.type) {
     case actionTypes.HAIR_TOUCH:
-      return hairTouch(state, action);
-    case actionTypes.EYES_TOUCH:
-      return eyesTouch(state, action);
-    case actionTypes.NOSE_TOUCH:
-      return noseTouch(state, action);
-    case actionTypes.CHEEKS_TOUCH:
-      return cheeksTouch(state, action);
-    case actionTypes.MOUTH_TOUCH:
-      return mouthTouch(state, action);
-      case actionTypes.EARS_TOUCH:
-      return earsTouch(state, action);
+      case actionTypes.EYES_TOUCH:
+        case actionTypes.NOSE_TOUCH:
+          case actionTypes.CHEEKS_TOUCH:
+            case actionTypes.MOUTH_TOUCH:
+              case actionTypes.EARS_TOUCH:
+      return {
+        ...state, 
+        name: action.name,
+      }
 
     case actionTypes.RESET_NAME:
-      return resetName(state, action);
+      return { ...state,
+      name: ' '
+      }
 
     default:
       return state;
