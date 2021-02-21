@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import { connect } from 'react-redux';
-import * as actions from '../../../store/actions';
+import * as actions from '../../../../store/actions';
 
 import Sound from 'react-native-sound';
 // Eyes Component
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
   },
   OutterPupil: {
     height: '80%',
-    backgroundColor: '#3abeff',
+    backgroundColor: '#743D2B',
     width: '80%',
     borderRadius: 50,
     position: 'relative',

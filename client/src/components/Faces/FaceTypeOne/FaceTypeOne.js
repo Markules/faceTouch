@@ -8,7 +8,7 @@ import Mouth from './Mouth/Mouth';
 import Nose from './Nose/Nose';
 
 // Face component
-const Face = (props) => {
+const FaceTypeOne = (props) => {
 
     return(
         <View {...props} style={styles.Face}>
@@ -40,4 +40,4 @@ Face:{
 
 })
 
-export default Face;
+export default FaceTypeOne;

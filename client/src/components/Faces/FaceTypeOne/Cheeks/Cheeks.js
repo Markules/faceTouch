@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {StyleSheet, ToastAndroid, TouchableOpacity, View} from 'react-native';
 import {connect} from 'react-redux';
-import * as actions from '../../../store/actions';
+import * as actions from '../../../../store/actions';
 
 import Sound from 'react-native-sound';
 // Cheeks component

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import { connect } from 'react-redux';
-import * as actions from '../../../store/actions';
+import * as actions from '../../../../store/actions';
 
 import Sound from 'react-native-sound';
 // Nose component 
@@ -37,9 +37,9 @@ const Nose = (props) => {
 
 const styles = StyleSheet.create({
   Nose: {
-    backgroundColor: '#ffdbac',
+    backgroundColor: '#B06C49',
     borderStyle: 'solid',
-    borderBottomColor: 'gray',
+    borderBottomColor: 'black',
     borderBottomWidth: 1,
     borderLeftWidth: 1,
     borderRightWidth: 1,

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import {connect} from 'react-redux';
 import {StyleSheet, TouchableOpacity, View} from 'react-native';
 
-import * as actions from '../../../store/actions';
+import * as actions from '../../../../store/actions';
 
 import Sound from 'react-native-sound';
 // Hair component
@@ -45,8 +45,8 @@ const styles = StyleSheet.create({
     height: '27%',
     width: '22%',
     backgroundColor: 'transparent',
-    borderLeftColor: 'yellow',
-    borderBottomColor: 'yellow',
+    borderLeftColor: 'black',
+    borderBottomColor: 'black',
     borderRadius: 500,
     borderLeftWidth: 10,
     borderBottomWidth: 25,
