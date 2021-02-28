@@ -1,0 +1,4 @@
+#Tue Feb 16 14:43:48 IST 2021
+base.0=/media/mark/71290e93-e48d-4f57-98d4-3160798637ce/home/mark/progremming/react-native/faceTouch/client/android/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
