@@ -37,8 +37,8 @@ local.properties
 # node.js
 #
 client/node_modules/
-client/npm-debug.log
-client/yarn-error.log
+npm-debug.log
+yarn-error.log
 
 # BUCK
 client/buck-out/
