@@ -21,12 +21,16 @@ npm install
 
 Install dependecies for react native
 
+
 cd faceTouch/client
 npm install 
 
 start app
+
 open android emulator or connect android device
 
 cd faceTouch/client
+
 react-native start
+
 react-native run-android
